@@ -24,6 +24,6 @@ Route::get('/weixin/api', 'Api\ApiController@test');
 Route::get('/weixin/menu', 'Weixin\WeixinController@viewMenu');
 Route::post('/weixin/passmenu', 'Weixin\WeixinController@passMenu');
 
-Route::post('/u/ulogin', 'User\LoginRegister@ulogn');//App登录逻辑
+Route::post('/u/ulogin', 'User\LoginRegister@ulogin');//App登录逻辑
 Route::post('/u/register', 'User\LoginRegister@uregister');//App注册逻辑
 

@@ -22,12 +22,12 @@ class LoginRegister extends Controller
         Redis::expire($ktoken,60*2);
         if($user_data){
             $data=[
-                'errcode'=>4001,
+                'errcode'=>'4001',
                 'errmsg'=>'登录成功'
             ];
         }else{
             $data=[
-                'errcode'=>5001,
+                'errcode'=>'5001',
                 'errmsg'=>'登录失败'
             ];
         }
@@ -45,12 +45,12 @@ class LoginRegister extends Controller
         $res=UserModel::insert($info);
         if($res){
             $data=[
-                'errcode'=>4001,
+                'errcode'=>'4001',
                 'errmsg'=>'注册成功'
             ];
         }else{
             $data=[
-                'errcode'=>5001,
+                'errcode'=>'5001',
                 'errmsg'=>'注册失败'
             ];
         }

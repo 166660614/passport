@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Redis;
 class UserModel extends Model
 {
-    protected $table='app_api';
+    protected $table='app_user';
     public $timestamps=false;
     //public static $weixin_access_token="str:weixin_access_token";
 //    public static function getAccessToken(){

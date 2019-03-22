@@ -16,10 +16,10 @@ class LoginRegister extends Controller
             'user_pwd'=>$upwd,
         ];
         $user_data=UserModel::where($where)->first();
-        $ktoken='u:redis:token:'.$user_data['user_id'];
-        $token=$token=str_random(9).$user_data['user_id'];
-        $htoken=Redis::hSet($ktoken,'token',$token);
-        Redis::expire($ktoken,60*2);
+        $ktoken='token:u:'.$user_data['user_id'];
+        $token=$token=str_random(32);
+        $htoken=Redis::hSet($ktoken,'app:token',$token);
+        Redis::expire($ktoken,60*5);
         if($user_data){
             $data=[
                 'errcode'=>'4001',
@@ -38,9 +38,9 @@ class LoginRegister extends Controller
         $upwd=$_POST['upwd'];
         $uemail=$_POST['uemail'];
         $info=[
-            'uname'=>$uname,
-            'upwd'=>$upwd,
-            'uemail'=>$uemail
+            'user_name'=>$uname,
+            'user_pwd'=>$upwd,
+            'user_email'=>$uemail
         ];
         $res=UserModel::insert($info);
         if($res){

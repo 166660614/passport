@@ -16,6 +16,11 @@ class LoginRegister extends Controller
             'user_pwd'=>$upwd,
         ];
         $user_data=UserModel::where($where)->first();
+        $data=[
+            'errcode'=>'4001',
+            'errmsg'=>$user_data,
+        ];
+        return $data;
         $ktoken='u:redis:token:'.$user_data['user_id'];
         $token=$token=str_random(9).$user_data['user_id'];
         $htoken=Redis::hSet($ktoken,'token',$token);

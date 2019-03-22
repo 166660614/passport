@@ -19,7 +19,7 @@ class LoginRegister extends Controller
         $ktoken='u:redis:token:'.$user_data['user_id'];
         $token=$token=str_random(9).$user_data['user_id'];
         $htoken=Redis::hSet($ktoken,'token',$token);
-        Redis::expire($ktoken,60*24*2);
+        Redis::expire($ktoken,60*2);
         if($user_data){
             $data=[
                 'errcode'=>4001,
@@ -31,7 +31,7 @@ class LoginRegister extends Controller
                 'errmsg'=>'登录失败'
             ];
         }
-        echo json_encode($data);
+        return $data;
     }
     public function uregister(){
         $uname=$_POST['uname'];
@@ -54,6 +54,6 @@ class LoginRegister extends Controller
                 'errmsg'=>'注册失败'
             ];
         }
-        echo json_encode($data);
+        return $data;
     }
 }

@@ -56,4 +56,7 @@ class LoginRegister extends Controller
         }
         return $data;
     }
+    public function login(){
+        return view('user.login');
+    }
 }

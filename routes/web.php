@@ -27,3 +27,6 @@ Route::post('/weixin/passmenu', 'Weixin\WeixinController@passMenu');
 Route::post('/u/ulogin', 'User\LoginRegister@ulogin');//App登录逻辑
 Route::post('/u/uregister', 'User\LoginRegister@uregister');//App注册逻辑
 
+Route::get('/u/login', 'User\LoginRegister@login'); //登录页面展示
+Route::get('/u/register', 'User\LoginRegister@register'); //登录页面展示
+

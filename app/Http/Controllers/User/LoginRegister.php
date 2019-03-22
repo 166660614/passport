@@ -28,7 +28,7 @@ class LoginRegister extends Controller
         }else{
             $data=[
                 'errcode'=>'5001',
-                'errmsg'=>'登录失败'
+                'errmsg'=>'账号或者密码错误'
             ];
         }
         return $data;

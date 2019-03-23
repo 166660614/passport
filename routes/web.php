@@ -29,4 +29,3 @@ Route::post('/u/uregister', 'User\LoginRegister@uregister');//App注册逻辑
 
 Route::get('/u/login', 'User\LoginRegister@login'); //登录页面展示
 Route::get('/u/register', 'User\LoginRegister@register'); //登录页面展示
-

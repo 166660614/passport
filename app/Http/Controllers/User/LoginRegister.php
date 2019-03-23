@@ -23,7 +23,9 @@ class LoginRegister extends Controller
         if($user_data){
             $data=[
                 'errcode'=>'4001',
-                'errmsg'=>'登录成功'
+                'errmsg'=>'登录成功',
+                'token'=>$token,
+                'user_id'=>$user_data['user_id'],
             ];
         }else{
             $data=[
